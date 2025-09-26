@@ -1,0 +1,68 @@
+//Uses the Localhost
+
+###Get All recipes
+GET http://localhost:3000/recipes
+
+###Get recipe by id
+GET http://localhost:3000/recipes/68d63bd77c8e7059b277cc48
+
+###Create recipe
+POST http://localhost:3000/recipes
+Content-Type: application/json
+
+{
+  "name": "Unicorn Milkshake",
+  "description": "A colorful, sweet milkshake topped with whipped cream and sprinkles.",
+  "ingredients": [
+    { "name": "Vanilla Ice Cream", "amount": 3, "unit": "scoops" },
+    { "name": "Milk", "amount": 200, "unit": "ml" },
+    { "name": "Strawberry Syrup", "amount": 2, "unit": "tbsp" },
+    { "name": "Whipped Cream", "amount": 1, "unit": "cup" },
+    { "name": "Rainbow Sprinkles", "amount": 2, "unit": "tbsp" },
+    { "name": "Cotton Candy", "amount": 1, "unit": "small handful" }
+  ],
+  "instructions": [
+    "Blend ice cream, milk, and strawberry syrup until smooth.",
+    "Pour into a tall glass.",
+    "Top with whipped cream, sprinkles, and cotton candy.",
+    "Serve immediately with a colorful straw."
+  ],
+  "prepTime": 5,
+  "cookTime": 0,
+  "servings": 2,
+  "category": "Drink",
+  "cuisine": "Fun Food"
+}
+
+
+### Update recipe
+PUT http://localhost:3000/recipes/68d63e0196484240f7a3d183
+Content-Type: application/json
+
+{
+  "name": "Unicorn Milkshake",
+  "description": "A colorful and sweet milkshake topped with whipped cream and lots of sprinkles.",
+  "ingredients": [
+    { "name": "Vanilla Ice Cream", "amount": 3, "unit": "scoops" },
+    { "name": "Milk", "amount": 200, "unit": "ml" },
+    { "name": "Strawberry Syrup", "amount": 2, "unit": "tbsp" },
+    { "name": "Whipped Cream", "amount": 1, "unit": "cup" },
+    { "name": "Rainbow Sprinkles", "amount": 2, "unit": "tbsp" },
+    { "name": "Cotton Candy", "amount": 1, "unit": "small handful" }
+  ],
+  "instructions": [
+    "Blend ice cream, milk, and strawberry syrup until smooth.",
+    "Pour into a tall glass.",
+    "Top with whipped cream, sprinkles, and cotton candy.",
+    "Serve immediately with a colorful straw."
+  ],
+  "prepTime": 5,
+  "cookTime": 0,
+  "servings": 2,
+  "category": "Drink",
+  "cuisine": "Fun Food"
+}
+
+###Delete recipe by id
+DELETE http://localhost:3000/recipes/68d65b6ca21871b9d4766d2e
+

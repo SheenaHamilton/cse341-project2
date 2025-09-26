@@ -1,0 +1,36 @@
+//Uses the Localhost
+
+###Get All recipes
+GET http://localhost:3000/groceries
+
+###Get recipe by id
+GET http://localhost:3000/groceries/68d651ba7c8e7059b277cc50
+
+###Create recipe
+POST http://localhost:3000/groceries
+Content-Type: application/json
+
+{
+  "name": "Bananas",
+  "category": "Produce",
+  "quantity": 6,
+  "unit": "pieces",
+  "purchased": false
+}
+
+
+### Update recipe
+PUT http://localhost:3000/groceries/68d65f5a48053ec428652d8a
+Content-Type: application/json
+
+{
+  "name": "Organic Bananas",
+  "category": "Produce",
+  "quantity": 6,
+  "unit": "pieces",
+  "purchased": false
+}
+
+###Delete recipe by id
+DELETE http://localhost:3000/groceries/68d65f4c48053ec428652d89
+
