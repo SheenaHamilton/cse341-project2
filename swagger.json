@@ -1,371 +1,338 @@
 {
-  "swagger": "2.0",
-  "info": {
-    "title": "Recipes Application",
-    "description": "CSE 341 Recipes Project by Sheena Hamilton.",
-    "version": "1.0.0"
-  },
-  "host": "localhost:3000",
-  "basePath": "/",
-  "schemes": [
-    "https",
-    "http"
-  ],
-  "paths": {
-    "/": {
-      "get": {
-        "tags": [
-          "Recipe Project"
-        ],
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
+    "swagger": "2.0",
+    "info": {
+        "title": "Recipes Application",
+        "description": "CSE 341 Recipes Project by Sheena Hamilton.",
+        "version": "1.0.0"
     },
-    "/api-docs": {
-      "get": {
-        "description": "",
-        "responses": {
-          "default": {
-            "description": ""
-          }
-        }
-      }
-    },
-    "/recipes/{id}": {
-      "get": {
-        "tags": [
-          "Recipes"
-        ],
-        "description": "",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "Recipes"
-        ],
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "name": {
-                  "example": "any"
-                },
-                "description": {
-                  "example": "any"
-                },
-                "ingredients": {
-                  "example": "any"
-                },
-                "instructions": {
-                  "example": "any"
-                },
-                "prepTime": {
-                  "example": "any"
-                },
-                "cookTime": {
-                  "example": "any"
-                },
-                "servings": {
-                  "example": "any"
-                },
-                "category": {
-                  "example": "any"
-                },
-                "cuisine": {
-                  "example": "any"
+    "host": "https://cse341-project2-tdf6.onrender.com",
+    "basePath": "/",
+    "schemes": ["https", "http"],
+    "paths": {
+        "/": {
+            "get": {
+                "tags": ["Recipe Project"],
+                "description": "",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
                 }
-              }
             }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "No Content"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "Recipes"
-        ],
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "No Content"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      }
-    },
-    "/recipes/": {
-      "get": {
-        "tags": [
-          "Recipes"
-        ],
-        "description": "",
-        "produces": [
-          "application/json"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "Recipes"
-        ],
-        "description": "",
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "name": {
-                  "example": "any"
-                },
-                "description": {
-                  "example": "any"
-                },
-                "ingredients": {
-                  "example": "any"
-                },
-                "instructions": {
-                  "example": "any"
-                },
-                "prepTime": {
-                  "example": "any"
-                },
-                "cookTime": {
-                  "example": "any"
-                },
-                "servings": {
-                  "example": "any"
-                },
-                "category": {
-                  "example": "any"
-                },
-                "cuisine": {
-                  "example": "any"
+        },
+        "/api-docs": {
+            "get": {
+                "description": "",
+                "responses": {
+                    "default": {
+                        "description": ""
+                    }
                 }
-              }
             }
-          }
-        ],
-        "responses": {
-          "201": {
-            "description": "Created"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      }
-    },
-    "/groceries/{id}": {
-      "get": {
-        "tags": [
-          "Groceries"
-        ],
-        "description": "",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "Groceries"
-        ],
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "name": {
-                  "example": "any"
-                },
-                "category": {
-                  "example": "any"
-                },
-                "quantity": {
-                  "example": "any"
-                },
-                "unit": {
-                  "example": "any"
-                },
-                "purchased": {
-                  "example": "any"
+        },
+        "/recipes/{id}": {
+            "get": {
+                "tags": ["Recipes"],
+                "description": "",
+                "produces": ["application/json"],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
                 }
-              }
-            }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "No Content"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "Groceries"
-        ],
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "No Content"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      }
-    },
-    "/groceries/": {
-      "get": {
-        "tags": [
-          "Groceries"
-        ],
-        "description": "",
-        "produces": [
-          "application/json"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "Groceries"
-        ],
-        "description": "",
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "name": {
-                  "example": "any"
-                },
-                "category": {
-                  "example": "any"
-                },
-                "quantity": {
-                  "example": "any"
-                },
-                "unit": {
-                  "example": "any"
-                },
-                "purchased": {
-                  "example": "any"
+            },
+            "put": {
+                "tags": ["Recipes"],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "name": {
+                                    "example": "any"
+                                },
+                                "description": {
+                                    "example": "any"
+                                },
+                                "ingredients": {
+                                    "example": "any"
+                                },
+                                "instructions": {
+                                    "example": "any"
+                                },
+                                "prepTime": {
+                                    "example": "any"
+                                },
+                                "cookTime": {
+                                    "example": "any"
+                                },
+                                "servings": {
+                                    "example": "any"
+                                },
+                                "category": {
+                                    "example": "any"
+                                },
+                                "cuisine": {
+                                    "example": "any"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
                 }
-              }
+            },
+            "delete": {
+                "tags": ["Recipes"],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
             }
-          }
-        ],
-        "responses": {
-          "201": {
-            "description": "Created"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
+        },
+        "/recipes/": {
+            "get": {
+                "tags": ["Recipes"],
+                "description": "",
+                "produces": ["application/json"],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            },
+            "post": {
+                "tags": ["Recipes"],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "name": {
+                                    "example": "any"
+                                },
+                                "description": {
+                                    "example": "any"
+                                },
+                                "ingredients": {
+                                    "example": "any"
+                                },
+                                "instructions": {
+                                    "example": "any"
+                                },
+                                "prepTime": {
+                                    "example": "any"
+                                },
+                                "cookTime": {
+                                    "example": "any"
+                                },
+                                "servings": {
+                                    "example": "any"
+                                },
+                                "category": {
+                                    "example": "any"
+                                },
+                                "cuisine": {
+                                    "example": "any"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            }
+        },
+        "/groceries/{id}": {
+            "get": {
+                "tags": ["Groceries"],
+                "description": "",
+                "produces": ["application/json"],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            },
+            "put": {
+                "tags": ["Groceries"],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "name": {
+                                    "example": "any"
+                                },
+                                "category": {
+                                    "example": "any"
+                                },
+                                "quantity": {
+                                    "example": "any"
+                                },
+                                "unit": {
+                                    "example": "any"
+                                },
+                                "purchased": {
+                                    "example": "any"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            },
+            "delete": {
+                "tags": ["Groceries"],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            }
+        },
+        "/groceries/": {
+            "get": {
+                "tags": ["Groceries"],
+                "description": "",
+                "produces": ["application/json"],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            },
+            "post": {
+                "tags": ["Groceries"],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "name": {
+                                    "example": "any"
+                                },
+                                "category": {
+                                    "example": "any"
+                                },
+                                "quantity": {
+                                    "example": "any"
+                                },
+                                "unit": {
+                                    "example": "any"
+                                },
+                                "purchased": {
+                                    "example": "any"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            }
         }
-      }
     }
-  }
 }
