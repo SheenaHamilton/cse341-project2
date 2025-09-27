@@ -9,8 +9,6 @@ router.get('/', recipesController.getAllRecipes);
 
 router.post('/', validate.checkRecipe(), validate.checkRecipeData, recipesController.createRecipe);
 
-router.put('/:id', recipesController.updateRecipe);
-
 router.put('/:id', validate.checkRecipe(), validate.checkRecipeData, recipesController.updateRecipe);
 
 router.delete('/:id', recipesController.deleteRecipe);
