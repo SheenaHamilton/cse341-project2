@@ -4,7 +4,7 @@
 GET http://localhost:3000/recipes
 
 ###Get recipe by id
-GET http://localhost:3000/recipes/68d63bd77c8e7059b277cc48
+GET http://localhost:3000/recipes/68d63bd77c8e7059b277cc4c
 
 ###Create recipe
 POST http://localhost:3000/recipes
@@ -22,10 +22,6 @@ Content-Type: application/json
     { "name": "Cotton Candy", "amount": 1, "unit": "small handful" }
   ],
   "instructions": [
-    "Blend ice cream, milk, and strawberry syrup until smooth.",
-    "Pour into a tall glass.",
-    "Top with whipped cream, sprinkles, and cotton candy.",
-    "Serve immediately with a colorful straw."
   ],
   "prepTime": 5,
   "cookTime": 0,
@@ -36,7 +32,7 @@ Content-Type: application/json
 
 
 ### Update recipe
-PUT http://localhost:3000/recipes/68d63e0196484240f7a3d183
+PUT http://localhost:3000/recipes/68d84700a765e13a415de324
 Content-Type: application/json
 
 {
@@ -64,5 +60,5 @@ Content-Type: application/json
 }
 
 ###Delete recipe by id
-DELETE http://localhost:3000/recipes/68d65b6ca21871b9d4766d2e
+DELETE http://localhost:3000/recipes/68d84700a765e13a415de324
 

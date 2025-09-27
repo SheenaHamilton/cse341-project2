@@ -44,7 +44,6 @@ validate.checkGroceryData = async (req, res, next) => {
     let errors = [];
     errors = validationResult(req);
     if (!errors.isEmpty()) {
-        console.log(errors.array());
         console.error('Error checkGroceryData:', errors);
         res.status(500).json({ message: `Encountered an error validating Grocery: ` + errors.array()[0].msg });
         return

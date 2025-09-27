@@ -75,7 +75,7 @@ validate.checkRecipeData = async (req, res, next) => {
     let errors = [];
     errors = validationResult(req);
     if (!errors.isEmpty()) {
-        console.log(errors.array());
+
         console.error('Error checkRecipeData:', errors);
         res.status(500).json({ message: `Encountered an error validating: ` + errors.array()[0].msg });
         return

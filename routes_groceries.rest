@@ -1,36 +1,36 @@
 //Uses the Localhost
 
-###Get All recipes
+###Get All groceries
 GET http://localhost:3000/groceries
 
 ###Get recipe by id
-GET http://localhost:3000/groceries/68d651ba7c8e7059b277cc50
+GET http://localhost:3000/groceries/68d65f4648053ec428652d88
 
-###Create recipe
+###Create groceries
 POST http://localhost:3000/groceries
 Content-Type: application/json
 
 {
-  "name": "Bananas",
-  "category": "Produce",
-  "quantity": 6,
-  "unit": "pieces",
+  "name": "Ice Cream",
+  "category": "Freezer",
+  "quantity": 2,
+  "unit": "tubs",
   "purchased": false
 }
 
 
-### Update recipe
-PUT http://localhost:3000/groceries/68d65f5a48053ec428652d8a
+### Update groceries
+PUT http://localhost:3000/groceries/68d84645a765e13a415de323
 Content-Type: application/json
 
 {
-  "name": "Organic Bananas",
-  "category": "Produce",
-  "quantity": 6,
-  "unit": "pieces",
+  "name": "Ice Cream Bars",
+  "category": "Freezer",
+  "quantity": 3,
+  "unit": "tubs",
   "purchased": false
 }
 
-###Delete recipe by id
-DELETE http://localhost:3000/groceries/68d65f4c48053ec428652d89
+###Delete groceries by id
+DELETE http://localhost:3000/groceries/68d84645a765e13a415de323
 
