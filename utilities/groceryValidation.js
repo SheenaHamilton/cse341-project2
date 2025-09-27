@@ -26,7 +26,7 @@ validate.checkGrocery = () => {
             .withMessage('Quantity must be a number'),
 
         // unit is required 
-        body('category')
+        body('unit')
             .optional()
             .trim()
             .escape(),
