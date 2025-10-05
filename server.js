@@ -16,21 +16,18 @@ app
         resave: false,
         saveUninitialized: true,
     }))
-    .use(passport.initialize)
+    .use(passport.initialize())
     .use(passport.session())
-    .use((req, res, next) => {
-        res.setHeader('Access-Control-Origin', '*');
-        res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Z-Key');
-        res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-        next();
-    })
-    .use(cors({ methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'] }))
-    .use(cors({ origin: '*' }))
+    .use(cors({
+        methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+        allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'Z-Key'],
+        origin: '*'
+    }))
     .use('/', require('./routes'));
 
 passport.use(new GitHubStrategy({
     clientID: process.env.GITHUB_CLIENTID,
-    slientSecret: process.env.GITHUB_SECRET,
+    clientSecret: process.env.GITHUB_SECRET,
     callbackURL: process.env.CALLBACK_URL
 },
     function (accessToken, refreshToekn, profile, done) {
@@ -47,9 +44,9 @@ passport.deserializeUser((user, done) => {
     done(null, user);
 });
 
-app.get('/', (req, res) => { res.send(req.session.user !== undefined ? `Logged in as ${req.session.user.displayName}` : "Logged Out") });
+app.get('/', (req, res) => { res.send(req.session.user !== undefined ? `Logged in as ${req.session.user.username}` : "Logged Out") });
 
-app.get('github/callback', passport.authenticate('github', { failureRedirect: '/api-docs', session: false }),
+app.get('/github/callback', passport.authenticate('github', { failureRedirect: '/api-docs', session: false }),
     (req, res) => {
         req.session.user = req.user;
         res.redirect('/');
