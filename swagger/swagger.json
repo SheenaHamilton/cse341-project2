@@ -7,19 +7,8 @@
     },
     "host": "cse341-project2-tdf6.onrender.com",
     "basePath": "/",
-    "schemes": ["https", "http"],
+    "schemes": ["https"],
     "paths": {
-        "/": {
-            "get": {
-                "tags": ["Recipe Project"],
-                "description": "",
-                "responses": {
-                    "200": {
-                        "description": "OK"
-                    }
-                }
-            }
-        },
         "/recipes/{id}": {
             "get": {
                 "tags": ["Recipes"],
@@ -36,6 +25,12 @@
                 "responses": {
                     "200": {
                         "description": "OK"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "Not Found"
                     },
                     "500": {
                         "description": "Internal Server Error"
@@ -90,8 +85,20 @@
                     }
                 ],
                 "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
                     "204": {
                         "description": "No Content"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Not Found"
                     },
                     "500": {
                         "description": "Internal Server Error"
@@ -112,6 +119,12 @@
                 "responses": {
                     "204": {
                         "description": "No Content"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
                     },
                     "500": {
                         "description": "Internal Server Error"
@@ -178,6 +191,9 @@
                     "201": {
                         "description": "Created"
                     },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
                     "500": {
                         "description": "Internal Server Error"
                     }
@@ -200,6 +216,12 @@
                 "responses": {
                     "200": {
                         "description": "OK"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "Not Found"
                     },
                     "500": {
                         "description": "Internal Server Error"
@@ -242,8 +264,20 @@
                     }
                 ],
                 "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
                     "204": {
                         "description": "No Content"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Not Found"
                     },
                     "500": {
                         "description": "Internal Server Error"
@@ -264,6 +298,15 @@
                 "responses": {
                     "204": {
                         "description": "No Content"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Not Found"
                     },
                     "500": {
                         "description": "Internal Server Error"
@@ -318,8 +361,26 @@
                     "201": {
                         "description": "Created"
                     },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
                     "500": {
                         "description": "Internal Server Error"
+                    }
+                }
+            }
+        },
+        "/profile/": {
+            "get": {
+                "tags": ["Users"],
+                "description": "",
+                "produces": ["application/json"],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
                     }
                 }
             }

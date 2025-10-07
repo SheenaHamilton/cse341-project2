@@ -2,21 +2,32 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const mongodb = require('./data/database');
+const passport = require('./config/passport');
+const session = require('express-session');
+const cors = require('cors');
 
 const port = process.env.PORT || 3000;
+const authRoutes = require('./routes/authorization');
 
-app.use(bodyParser.json());
+app
+    .use(bodyParser.json())
+    .use(session({
+        secret: "secret",
+        resave: false,
+        saveUninitialized: true,
+    }))
+    .use(passport.initialize())
+    .use(passport.session())
+    .use(cors({
+        methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+        allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'Z-Key'],
+        origin: '*'
+    }))
+    .use('/', require('./routes/authorization'))
+    .use('/', require('./routes'));
 
-app.use(bodyParser.urlencoded({ extended: true }));
+app.get('/', (req, res) => { res.send(req.session.user !== undefined ? `Logged in as ${req.session.user.username}` : "Logged Out") });
 
-app.use((req, res, next) => {
-    res.setHeader('Access-Control-Origin', '*');
-    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Z-Key');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-    next();
-});
-
-app.use('/', require('./routes'));
 
 //Catch all Error 
 process.on('uncaughtException', (err, origin) => {

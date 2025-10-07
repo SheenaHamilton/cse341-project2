@@ -1,14 +1,9 @@
 const router = require('express').Router();
+const passport = require('passport');
 
 router.use('/', require('./swagger'));
-
-router.get('/', (req, res) => {
-    //#swagger.tags=['Recipe Project']
-    res.send('Project 2: Recipe Project');
-});
-
 router.use('/recipes', require('./recipes'));
-
 router.use('/groceries', require('./groceries'));
+router.use('/profile', require('./users'));
 
 module.exports = router;
